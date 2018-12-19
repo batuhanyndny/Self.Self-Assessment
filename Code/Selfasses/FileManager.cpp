@@ -10,24 +10,40 @@ using namespace std;
 
 FileManager::FileManager()
 {
-
+	
 }
 
 
 FileManager::~FileManager()
 {
 }
+void FileManager::replaceLines(string &line,string topicName, int topicIndex, vector<string> topicArray)
+{
+	size_t targetPos = line.find(topicName);
+	if (targetPos != string::npos)
+	{
+		line.replace(line.find(topicName), topicName.length(), topicArray.at(topicIndex));
+
+	}
+}
 
 void FileManager::changeTopic(string changeTopicName, vector<string> topicArray)
 {
-
-	srand(time(NULL));
+	
 	int ArraySize = topicArray.size();
-	int topicRandom = rand() % ArraySize;
-	int placeRandom = rand() % 7 + 1;
+	int topicRandom1 = rand() % ArraySize;
+	int topicRandom2 = rand() % ArraySize;
+	int topicRandom3 = rand() % ArraySize;
+
+
+	int randomPlace1 = rand() % 7 + 1;
+	int randomPlace2 = rand() % 7 + 1;
+	int randomPlace3 = rand() % 7 + 1;
 
 	string currentLine;
-	string topicName = changeTopicName + to_string(placeRandom);
+	string topicName1 = changeTopicName + to_string(randomPlace1);
+	string topicName2 = changeTopicName + to_string(randomPlace2);
+	string topicName3 = changeTopicName + to_string(randomPlace3);
 
 	fstream weekPlanFile(inputFileName);
 	ofstream weekPlanResult;
@@ -37,17 +53,13 @@ void FileManager::changeTopic(string changeTopicName, vector<string> topicArray)
 		
 		while (getline(weekPlanFile, currentLine))
 		{
-			size_t targetPos = currentLine.find(topicName);
-			if (targetPos != string::npos)
-			{
-				currentLine.replace(currentLine.find(topicName), topicName.length(), topicArray.at(topicRandom));
-				weekPlanResult << currentLine << "\n";
-			}
-			else
-			{
-				weekPlanResult << currentLine << "\n";
-			}
-			cout << fileCount << endl;
+			
+			replaceLines(currentLine, topicName1, topicRandom1, topicArray);
+			replaceLines(currentLine, topicName2, topicRandom2, topicArray);
+			replaceLines(currentLine, topicName3, topicRandom3, topicArray);
+
+			weekPlanResult << currentLine << "\n";
+			
 		}
 		weekPlanFile.close();
 		weekPlanResult.close();

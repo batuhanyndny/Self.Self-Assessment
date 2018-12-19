@@ -44,7 +44,7 @@ void loadIntoArray(vector<string> &arr, string fileName)
 int main()
 {
 	FileManager fileManager;
-
+	srand(time(NULL));
 	loadIntoArray(ReadVector,   ReadingFileName);
 	loadIntoArray(ViewVector,   ViewingFileName);
 	loadIntoArray(GramVector,   GrammerFileName);

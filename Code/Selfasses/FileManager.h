@@ -15,7 +15,9 @@ public:
 	void deleteTempFiles();
 private:
 
+	void replaceLines(std::string&, std::string, int, std::vector<std::string> );
 	void updateFileCount();
+	
 	void deleteFile(std::string fileName);
 
 	int fileCount = 0;
