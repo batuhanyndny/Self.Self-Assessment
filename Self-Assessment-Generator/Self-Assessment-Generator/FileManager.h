@@ -21,9 +21,8 @@ private:
 	void deleteFile(std::string fileName);
 
 	int fileCount = 0;
-	std::string inputFileName = "base" + std::to_string(fileCount) + ".rtf";
-	std::string resultFileName = "result" + std::to_string(fileCount) + ".rtf";
-	std::string finalResultFileName = "finalresult" + std::to_string(fileCount) + ".rtf";
+	std::string inputFileName = "bin/base" + std::to_string(fileCount) + ".bd";
+	std::string resultFileName = "bin/result" + std::to_string(fileCount) + ".bd";
 
 };
 

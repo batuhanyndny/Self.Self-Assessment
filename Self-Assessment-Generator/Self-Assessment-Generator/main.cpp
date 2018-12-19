@@ -42,6 +42,9 @@ void loadIntoArray(vector<string> &arr, string fileName)
 }
 int main()
 {
+
+	remove("Self-Assessment.rtf");
+
 	FileManager fileManager;
 	srand(time(NULL));
 	loadIntoArray(ReadVector, ReadingFileName);

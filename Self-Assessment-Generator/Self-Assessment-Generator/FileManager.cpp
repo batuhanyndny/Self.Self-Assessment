@@ -88,7 +88,7 @@ void FileManager::deleteTopic(std::string deleteTopicName)
 				size_t topicPos = curLine.find(curStr);
 				if (topicPos != string::npos)
 				{
-					curLine.replace(curLine.find(curStr), curStr.length(), "-");
+					curLine.replace(curLine.find(curStr), curStr.length(), " ");
 				}
 			}
 			finalResult << curLine << "\n";
@@ -105,17 +105,16 @@ void FileManager::deleteTopic(std::string deleteTopicName)
 void FileManager::updateFileCount()
 {
 	fileCount++;
-	inputFileName = "base" + std::to_string(fileCount) + ".rtf";
-	resultFileName = "result" + std::to_string(fileCount) + ".rtf";
-	finalResultFileName = "finalresult" + std::to_string(fileCount) + ".rtf";
+	inputFileName = "bin/base" + std::to_string(fileCount) + ".bd";
+	resultFileName = "bin/result" + std::to_string(fileCount) + ".bd";
 }
 void FileManager::deleteTempFiles()
 {
 
 	for (int i = 0; i <= 4; i++)
 	{
-		string base = "base" + to_string(i) + ".rtf";
-		string result = "result" + to_string(i) + ".rtf";
+		string base = "bin/base" + to_string(i) + ".bd";
+		string result = "bin/result" + to_string(i) + ".bd";
 
 		if (i != 0)
 		{
@@ -123,7 +122,7 @@ void FileManager::deleteTempFiles()
 		}
 		deleteFile(result);
 	}
-	string renamedFileName = "base" + to_string(fileCount) + ".rtf";
+	string renamedFileName = "bin/base" + to_string(fileCount) + ".bd";
 	rename(renamedFileName.c_str(), "Self-Assessment.rtf");
 }
 void FileManager::deleteFile(std::string fileName)
