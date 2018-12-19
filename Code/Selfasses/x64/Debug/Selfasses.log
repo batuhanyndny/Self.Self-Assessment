@@ -1,0 +1,3 @@
+﻿  Selfasses.cpp
+c:\users\yenidünya\desktop\yeni klasör\selfasses\selfasses.cpp(53): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Selfasses.vcxproj -> C:\Users\Yenidünya\Desktop\Yeni klasör\x64\Debug\Selfasses.exe
