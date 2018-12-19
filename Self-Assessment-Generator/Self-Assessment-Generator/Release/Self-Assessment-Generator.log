@@ -1,0 +1,8 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  FileManager.cpp
+  main.cpp
+c:\users\batuhan yenidünya\documents\github\self.self-assessment\self-assessment-generator\self-assessment-generator\main.cpp(46): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating code
+  All 347 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Self-Assessment-Generator.vcxproj -> C:\Users\Batuhan Yenidünya\Documents\GitHub\Self.Self-Assessment\Self-Assessment-Generator\Self-Assessment-Generator\..\..\..\..\..\Desktop\Yeni klasör (2)\Self-Assessment-Generator.exe
