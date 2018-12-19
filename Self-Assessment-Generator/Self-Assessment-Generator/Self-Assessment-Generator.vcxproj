@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{6DC3D132-26DA-4073-A7CB-7116C8B12A7E}</ProjectGuid>
@@ -114,13 +121,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\Documents\GitHub\Self.Self-Assessment\Code\ConsoleApplication1\FileManager.cpp" />
-    <ClCompile Include="..\..\..\..\Documents\GitHub\Self.Self-Assessment\Code\ConsoleApplication1\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\Documents\GitHub\Self.Self-Assessment\Code\ConsoleApplication1\FileManager.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
