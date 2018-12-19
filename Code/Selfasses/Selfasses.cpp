@@ -57,13 +57,8 @@ int main()
 	fileManager.changeTopic("View",   ViewVector);
 	fileManager.changeTopic("Gram",   GramVector);
 	fileManager.changeTopic("Extra",  ExtraVector);
-	
-
-	fileManager.deleteTopic("Listen");
-	fileManager.deleteTopic("Read");
-	fileManager.deleteTopic("View");
-	fileManager.deleteTopic("Gram");
-	fileManager.deleteTopic("Extra");
+	 
+	fileManager.deleteTempFiles();
 	
 	return 0;
 }

@@ -10,7 +10,7 @@ using namespace std;
 
 FileManager::FileManager()
 {
-	
+
 }
 
 
@@ -25,15 +25,16 @@ void FileManager::changeTopic(string changeTopicName, vector<string> topicArray)
 	int ArraySize = topicArray.size();
 	int topicRandom = rand() % ArraySize;
 	int placeRandom = rand() % 7 + 1;
-	cout << "place random:" << placeRandom << endl;
-	cout << "topic random:" << topicRandom << endl;
+
 	string currentLine;
 	string topicName = changeTopicName + to_string(placeRandom);
-	fstream weekPlanFile("duzgungibi.rtf");
+
+	fstream weekPlanFile(inputFileName);
 	ofstream weekPlanResult;
-	weekPlanResult.open("selfass.rtf");
+	weekPlanResult.open(resultFileName);
 	if (weekPlanFile.is_open())
 	{
+		
 		while (getline(weekPlanFile, currentLine))
 		{
 			size_t targetPos = currentLine.find(topicName);
@@ -46,18 +47,26 @@ void FileManager::changeTopic(string changeTopicName, vector<string> topicArray)
 			{
 				weekPlanResult << currentLine << "\n";
 			}
+			cout << fileCount << endl;
 		}
 		weekPlanFile.close();
 		weekPlanResult.close();
+		deleteTopic(changeTopicName);
+		
+	}
+	else
+	{
+		cout << "change file was unable to open";
 	}
 }
 
 void FileManager::deleteTopic(std::string deleteTopicName)
 {
 	string curLine;
-	fstream readResult("selfass.rtf");
+	fstream readResult(resultFileName);
 	ofstream finalResult;
-	finalResult.open("NewSelfAss.rtf");
+	updateFileCount();
+	finalResult.open(inputFileName);
 	if (readResult.is_open())
 	{
 		while (getline(readResult, curLine))
@@ -78,6 +87,42 @@ void FileManager::deleteTopic(std::string deleteTopicName)
 	}
 	else
 	{
-		cout << "Unable to open file";
+		cout << "delete file was unable to open";
+	}
+}
+
+void FileManager::updateFileCount()
+{
+	fileCount++;
+	inputFileName = "base" + std::to_string(fileCount) + ".rtf";
+	resultFileName = "result" + std::to_string(fileCount) + ".rtf";
+	finalResultFileName = "finalresult" + std::to_string(fileCount) + ".rtf";
+}
+void FileManager::deleteTempFiles()
+{
+	
+	for (int i = 0; i <= 4; i++)
+	{
+		string base = "base" + to_string(i) + ".rtf";
+		string result = "result" + to_string(i) + ".rtf";
+		
+		if (i != 0)
+		{
+			deleteFile(base);
+		}
+		deleteFile(result);
+	}
+	string renamedFileName = "base" + to_string(fileCount) + ".rtf";
+	rename(renamedFileName.c_str(), "Self-Assessment.rtf");
+}
+void FileManager::deleteFile(std::string fileName)
+{
+	if (remove(fileName.c_str()) != 0)
+	{
+		cout << "error deleting \n";
+	}
+	else
+	{
+		cout << "deleted \n";
 	}
 }

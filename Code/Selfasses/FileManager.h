@@ -12,7 +12,16 @@ public:
 
 	void changeTopic(std::string changeTopicName, std::vector<std::string> topicArray);
 	void deleteTopic(std::string deleteTopicName);
+	void deleteTempFiles();
 private:
-	int fileCount;
+
+	void updateFileCount();
+	void deleteFile(std::string fileName);
+
+	int fileCount = 0;
+	std::string inputFileName = "base" + std::to_string(fileCount) + ".rtf";
+	std::string resultFileName = "result" + std::to_string(fileCount) + ".rtf";
+	std::string finalResultFileName = "finalresult" + std::to_string(fileCount) + ".rtf";
+
 };
 
