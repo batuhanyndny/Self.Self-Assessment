@@ -1,3 +1,0 @@
-﻿  FileManager.cpp
-c:\users\dogukan\desktop\self.self-assessment\code\selfasses\filemanager.cpp(33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Selfasses.vcxproj -> C:\Users\Dogukan\Desktop\Self.Self-Assessment\Code\x64\Debug\Selfasses.exe

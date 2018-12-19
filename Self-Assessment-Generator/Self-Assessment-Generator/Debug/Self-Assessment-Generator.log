@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\batuhan yenidünya\documents\github\self.self-assessment\code\consoleapplication1\main.cpp(46): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Self-Assessment-Generator.vcxproj -> C:\Users\Batuhan Yenidünya\Desktop\Yeni klasör\Self-Assessment-Generator\Debug\Self-Assessment-Generator.exe
