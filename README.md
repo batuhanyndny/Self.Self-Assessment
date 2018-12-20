@@ -1,5 +1,5 @@
 # Self.Self-Assessment
-auto self assessment generator for Istinye University
+Auto self assessment generator for Istinye University
 
 Latest Version: 2.0
 
